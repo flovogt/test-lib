@@ -1,3 +1,3 @@
 # test-lib
 
-That's a test-lib package. New fix here.
+That's a test-lib package. New feature here.
