@@ -1,5 +1,5 @@
 {
-    "name": "test-lib",
+    "name": "@flovogt/test-lib",
     "version": "0.0.1",
     "license": "Apache-2.0",
     "description": "The Test-Lib",
