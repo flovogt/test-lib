@@ -1,0 +1,19 @@
+language: node
+
+os:
+ - linux
+
+branches:
+  only:
+    - master
+
+jobs:
+  include:
+  - stage: "Release"
+      name: "Generate a new Release"
+      if: (branch = master) AND (NOT (type = pull_request))
+      deploy:
+         provider: script
+         skip_cleanup: true
+         script:
+          - npx semantic-release
