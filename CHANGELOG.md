@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/flovogt/test-lib/compare/v1.0.0...v1.0.1) (2019-06-18)
+
+
+### Bug Fixes
+
+* New fix here ([a7d82dc](https://github.com/flovogt/test-lib/commit/a7d82dc))
+
 # 1.0.0 (2019-06-18)
 
 
