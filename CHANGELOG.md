@@ -1,0 +1,14 @@
+# 1.0.0 (2019-06-18)
+
+
+### Bug Fixes
+
+* add config ([e3970c5](https://github.com/flovogt/test-lib/commit/e3970c5))
+* add content to readme ([4bd9e94](https://github.com/flovogt/test-lib/commit/4bd9e94))
+* add content to readme ([a4a07a0](https://github.com/flovogt/test-lib/commit/a4a07a0))
+* add content to readme ([aab8832](https://github.com/flovogt/test-lib/commit/aab8832))
+* pkg ([f14a628](https://github.com/flovogt/test-lib/commit/f14a628))
+* release file ([abbb31a](https://github.com/flovogt/test-lib/commit/abbb31a))
+* release file ([e6039ad](https://github.com/flovogt/test-lib/commit/e6039ad))
+* releaserc ([1dd44cf](https://github.com/flovogt/test-lib/commit/1dd44cf))
+* releaserc ([5a59b02](https://github.com/flovogt/test-lib/commit/5a59b02))
