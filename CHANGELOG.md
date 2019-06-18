@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/flovogt/test-lib/compare/v1.0.1...v1.1.0) (2019-06-18)
+
+
+### Features
+
+* my test ([b2adaad](https://github.com/flovogt/test-lib/commit/b2adaad))
+
 ## [1.0.1](https://github.com/flovogt/test-lib/compare/v1.0.0...v1.0.1) (2019-06-18)
 
 
