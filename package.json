@@ -12,7 +12,7 @@
       "npm": ">= 5"
     },
     "scripts": {
-        "test": "ECHO Thats my test"
+        "test": "echo \"Thats my test\" && exit 0"
     },
     "files": [
       "src/*.js",
