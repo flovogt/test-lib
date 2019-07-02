@@ -15,6 +15,7 @@ jobs:
     - stage: "Release"
       name: "Generate a new Release"
       if: (branch = master) AND (NOT (type = pull_request))
+      script: skip
       deploy:
          provider: script
          skip_cleanup: true
