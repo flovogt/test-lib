@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/flovogt/test-lib/compare/v1.1.1...v1.2.0) (2019-07-02)
+
+
+### Features
+
+* New feature here ([b1ef7df](https://github.com/flovogt/test-lib/commit/b1ef7df))
+
 ## [1.1.1](https://github.com/flovogt/test-lib/compare/v1.1.0...v1.1.1) (2019-07-02)
 
 
