@@ -15,7 +15,7 @@ jobs:
     - stage: "Release"
       name: "Generate a new Release"
       if: (branch = master) AND (NOT (type = pull_request))
-      script: skip
+      script: echo \"Skipping test execution but keeping NPM hooks alive.\"
       deploy:
          provider: script
          skip_cleanup: true
