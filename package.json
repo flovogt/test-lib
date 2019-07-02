@@ -17,11 +17,7 @@
     "replace-in-file": "4.1.0"
   },
   "scripts": {
-<<<<<<< HEAD
     "test": "echo \"Thats my test\" && git config user.name && git config user.email && exit 0",
-=======
-    "test": "echo \"Thats my test\" && printenv GIT_AUTHOR_EMAIL && printenv GIT_AUTHOR_NAME && printenv GIT_COMMITTER_EMAIL && printenv GIT_COMMITTER_NAME && exit 0",
->>>>>>> master
     "prepublishOnly": "node ./scripts/builder.js"
   },
   "files": [
