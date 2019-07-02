@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/flovogt/test-lib/compare/v1.2.2...v1.2.3) (2019-07-02)
+
+
+### Bug Fixes
+
+* lint issue ([5964eee](https://github.com/flovogt/test-lib/commit/5964eee))
+
 ## [1.2.2](https://github.com/flovogt/test-lib/compare/v1.2.1...v1.2.2) (2019-07-02)
 
 
