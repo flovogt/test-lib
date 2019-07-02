@@ -15,10 +15,10 @@ const options = {
     to: version,
 };
 
-console.log(gae + "Test");
-console.log(gan + "Test");
-console.log(gce + "Test");
-console.log(gcn + "Test");
+console.log(gae.split(";"));
+console.log(gan.split(";"));
+console.log(gce.split(";"));
+console.log(gcn.split(";"));
 
 replace(options)
     .then(results => {
