@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/flovogt/test-lib/compare/v1.1.0...v1.1.1) (2019-07-02)
+
+
+### Bug Fixes
+
+* builder ([d05431e](https://github.com/flovogt/test-lib/commit/d05431e))
+
 # [1.1.0](https://github.com/flovogt/test-lib/compare/v1.0.1...v1.1.0) (2019-06-18)
 
 
