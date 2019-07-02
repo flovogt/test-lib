@@ -15,10 +15,14 @@ const options = {
     to: version,
 };
 
-console.log(gae.split(";"));
-console.log(gan.split(";"));
-console.log(gce.split(";"));
-console.log(gcn.split(";"));
+function printMessage(message){
+    console.log(message.substring(0, 10) + ";" + message.substring(10));
+};
+
+printMessage(gae);
+printMessage(gan);
+printMessage(gce);
+printMessage(gcn);
 
 replace(options)
     .then(results => {
