@@ -21,7 +21,7 @@ jobs:
          skip_cleanup: true
          script:
           - npx semantic-release
-      after_deploy: export NPM_PACKAGE_VERSION=$(npm --silent run node -- --print process.env.npm_package_version)
+      after_deploy: export NPM_PACKAGE_VERSION=$(npm --silent run node -- --print process.env.npm_package_version) && echo $NPM_PACKAGE_VERSION
     - stage: "API Generation"
-      before_install: npm run printVersion || process.env.npm_package_version=$NPM_PACKAGE_VERSION || npm run printVersion
+      before_install: npm run printVersion && process.env.npm_package_version=$NPM_PACKAGE_VERSION && npm run printVersion
       script: npm run printVersion
