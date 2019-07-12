@@ -1,3 +1,11 @@
+## [1.2.12](https://github.com/flovogt/test-lib/compare/v1.2.11...v1.2.12) (2019-07-12)
+
+
+### Bug Fixes
+
+* api generation ([bfd83f6](https://github.com/flovogt/test-lib/commit/bfd83f6))
+* api generation ([1c52319](https://github.com/flovogt/test-lib/commit/1c52319))
+
 ## [1.2.11](https://github.com/flovogt/test-lib/compare/v1.2.10...v1.2.11) (2019-07-12)
 
 
