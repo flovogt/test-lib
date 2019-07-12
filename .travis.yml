@@ -23,4 +23,4 @@ jobs:
           - npx semantic-release
     - stage: "API Generation"
       script:
-        - npm view nop-lib version && RELEASE_VERSION=$(npm view nop-lib version) npm run docs:prepare && npm run printVersion
+        - LAST_RELEASED_VERSION=$(npm view $(node -p "require('./package.json').name") version) npm run docs
