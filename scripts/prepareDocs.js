@@ -1,4 +1,4 @@
-const current_version = process.env.npm_release_version;
+const current_version = process.env.RELEASE_VERSION;
 console.log("Current Version: "+ current_version);
 
 if(current_version){
