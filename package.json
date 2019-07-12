@@ -18,7 +18,8 @@
   },
   "scripts": {
     "test": "echo \"Thats my test\" && exit 0",
-    "prepublishOnly": "node ./scripts/builder.js"
+    "prepublishOnly": "node ./scripts/builder.js",
+    "printVersion": "node --print process.env.npm_package_version"
   },
   "files": [
     "src/*.js",

@@ -15,9 +15,11 @@ jobs:
     - stage: "Release"
       name: "Generate a new Release"
       if: (branch = master) AND (NOT (type = pull_request))
-      script: echo \"Skipping test execution but keeping NPM hooks alive.\"
+      script: echo \"Skipping second test execution but keeping NPM hooks alive.\"
       deploy:
          provider: script
          skip_cleanup: true
          script:
           - npx semantic-release
+    - stage: "API Generation"
+      script: npm run printVersion
