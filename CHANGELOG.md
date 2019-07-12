@@ -1,3 +1,10 @@
+## [1.2.10](https://github.com/flovogt/test-lib/compare/v1.2.9...v1.2.10) (2019-07-12)
+
+
+### Bug Fixes
+
+* api generation ([af35402](https://github.com/flovogt/test-lib/commit/af35402))
+
 ## [1.2.9](https://github.com/flovogt/test-lib/compare/v1.2.8...v1.2.9) (2019-07-12)
 
 
