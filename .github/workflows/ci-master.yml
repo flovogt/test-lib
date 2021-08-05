@@ -56,8 +56,9 @@ jobs:
         run: npx semantic-release
       - name: Generate API Documentation
         run: npm run docs
-      - name: Deploy to GH Pages
-        uses: peaceiris/actions-gh-pages@v3.6.1
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: generated_docs/html
+          branch: gh-pages # The branch the action should deploy to.
+          folder: generated_docs/html
+          token: ${{ secrets.GITHUB_TOKEN }}
