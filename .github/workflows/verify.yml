@@ -23,7 +23,6 @@ jobs:
           check-latest: true
       - name: Setup Docker 
         uses: docker-practice/actions-setup-docker@master
-        run: docker version
       - name: Download Hapi Repo  
         uses: actions/checkout@v2
         with:
