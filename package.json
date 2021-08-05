@@ -8,19 +8,21 @@
     "url": "https://github.com/flovogt/test-lib.git"
   },
   "engines": {
-    "node": ">= 8.5",
-    "npm": ">= 5"
+    "node": ">= 12",
+    "npm": ">= 6"
   },
   "devDependencies": {
     "@semantic-release/git": "^7.0.12",
     "@semantic-release/changelog": "^3.0.4",
-    "replace-in-file": "4.1.0"
+    "replace-in-file": "4.1.0",
+    "eslint": "^7.30.0"
   },
   "scripts": {
     "test": "echo \"Thats my test\" && exit 0",
     "prepublishOnly": "node ./scripts/builder.js",
     "printVersion": "node --print process.env.npm_package_version",
-    "docs": "node ./scripts/generateDocs.js"
+    "docs": "node ./scripts/generateDocs.js",
+    "lint": "eslint src "
   },
   "files": [
     "src/*.js",
