@@ -1,7 +1,9 @@
+ls -la
 git clone https://github.com/hapifhir/hapi-fhir-jpaserver-starter.git hapi-fhir-jpaserver
 cd hapi-fhir-jpaserver
 #checkout specific commit to stabilize pipeline
 git checkout 38c711dabfa5433036a949be639b769f47d122c9
+ls -la
 sed -i -e 's/config.addAllowedHeader(HttpHeaders.ORIGIN);/config.addAllowedHeader(HttpHeaders.ORIGIN);config.addAllowedHeader(HttpHeaders.IF_MATCH);config.addAllowedHeader("x-csrf-token");/g' src/main/java/ca/uhn/fhir/jpa/starter/JpaRestfulServer.java
 sed -i -e 's/\/fhir\//\/fhir\/R4\//g' src/main/webapp/WEB-INF/web.xml
 sed -i -e 's/server_address=http:\/\/localhost:8080\/hapi-fhir-jpaserver\/fhir\//server_address=http:\/\/localhost:8080\/fhir\/R4\//g' src/main/resources/hapi.properties
