@@ -26,7 +26,7 @@ jobs:
       - name: Download Hapi Repo  
         uses: actions/checkout@v2
         with:
-          repository: 'https://github.com/hapifhir/hapi-fhir-jpaserver-starter'
+          repository: 'hapifhir/hapi-fhir-jpaserver-starter'
           ref: '38c711dabfa5433036a949be639b769f47d122c9'
       - name: Install NPM dependencies
         run: npm install
