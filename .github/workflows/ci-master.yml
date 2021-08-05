@@ -1,0 +1,80 @@
+name: Continous Integration
+
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+     name: Build, Lint Checks and Tests
+     runs-on: ubuntu-latest
+     steps:
+      - name: Checkout  
+        uses: actions/checkout@v2
+      - name: Setup Node 
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.13.1
+      - name: Install NPM dependencies
+        run: npm install
+      - name: Setup Java 
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: '8'
+          check-latest: true
+      - name: Setup Docker 
+        uses: docker-practice/actions-setup-docker@master
+      - name: Start Mock Server 
+        shell: bash
+        run: |
+         chmod +x "${GITHUB_WORKSPACE}/scripts/setup_mock.sh"
+         "${GITHUB_WORKSPACE}/scripts/setup_mock.sh"
+      - name: JSLint
+        run: npm run lint
+      - name: Tests
+        run: npm run test  
+  release:
+     needs: build
+     name: Release
+     runs-on: ubuntu-latest
+     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          persist-credentials: false 
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.13.1
+      - name: Install dependencies
+        run: npm install
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release
+  deploy:
+     needs: release
+     name: Generate API Documentation
+     runs-on: ubuntu-latest
+     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          persist-credentials: false 
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.13.1
+      - name: Install the Dependencies
+        run: npm install
+      - name: Generate JSDoc
+        run: npm run docs
+      - name: GitHub Pages action
+        uses: peaceiris/actions-gh-pages@v3.6.1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: generated_docs/html
