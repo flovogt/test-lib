@@ -15,6 +15,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12.13.1
+      - name: Install NPM dependencies
+        run: npm install
       - name: Setup Java 
         uses: actions/setup-java@v2
         with:
@@ -23,13 +25,11 @@ jobs:
           check-latest: true
       - name: Setup Docker 
         uses: docker-practice/actions-setup-docker@master
-      - name: Download Hapi Repo  
-        uses: actions/checkout@v2
-        with:
-          repository: 'hapifhir/hapi-fhir-jpaserver-starter'
-          ref: '38c711dabfa5433036a949be639b769f47d122c9'
-      - name: Install NPM dependencies
-        run: npm install
+      - name: Start Mock Server 
+        shell: bash
+        run: |
+         chmod +x "${GITHUB_WORKSPACE}/scripts/setup_mock.sh"
+         "${GITHUB_WORKSPACE}/scripts/setup_mock.sh"
       - name: JSLint
         run: npm run lint
       - name: Tests
