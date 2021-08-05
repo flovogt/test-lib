@@ -27,8 +27,6 @@ jobs:
           distribution: 'adopt'
           java-version: '8'
           check-latest: true
-      - name: Setup Docker 
-        uses: docker-practice/actions-setup-docker@master
       - name: Start Mock Server 
         shell: bash
         run: |
