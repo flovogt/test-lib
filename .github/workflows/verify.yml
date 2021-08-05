@@ -8,7 +8,9 @@ on:
     branches:
       - master
 jobs:
-  jslint:
+  
+  build:
+     name: Build
      runs-on: ubuntu-latest
      steps:
       - uses: actions/checkout@v1
@@ -19,3 +21,7 @@ jobs:
         run: npm install
       - name: JSLint Checks
         run: npm run lint
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
