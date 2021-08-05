@@ -40,6 +40,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
           persist-credentials: false 
       - name: Setup Node.js
@@ -48,30 +49,14 @@ jobs:
           node-version: 12.13.1
       - name: Install dependencies
         run: npm install
-      - name: Release
+      - name: Run Semantic Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npx semantic-release
-  deploy:
-     needs: release
-     name: Generate API Documentation
-     runs-on: ubuntu-latest
-     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-          persist-credentials: false 
-      - name: Setup Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12.13.1
-      - name: Install the Dependencies
-        run: npm install
-      - name: Generate JSDoc
+      - name: Generate API Documentation
         run: npm run docs
-      - name: GitHub Pages action
+      - name: Deploy to GH Pages
         uses: peaceiris/actions-gh-pages@v3.6.1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
