@@ -1,0 +1,29 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build-and-deploy-documentation:
+    name: Generate API Documentation
+    runs-on: ubuntu-latest
+    if: "contains(github.event.head_commit.message, '[skip ci]')"
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v1.4.4
+      with:
+          node-version: 12.13.1
+
+    - name: Install the Dependencies
+      run: npm install
+
+    - name: Generate JSDoc
+      run: npm run docs
+
+    - name: GitHub Pages action
+      uses: peaceiris/actions-gh-pages@v3.6.1
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: generated_docs/html
