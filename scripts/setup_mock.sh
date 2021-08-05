@@ -4,10 +4,15 @@ cd hapi-fhir-jpaserver
 #checkout specific commit to stabilize pipeline
 git checkout 38c711dabfa5433036a949be639b769f47d122c9
 ls -la
+echo "Ran sed 0"
 sed -i -e 's/config.addAllowedHeader(HttpHeaders.ORIGIN);/config.addAllowedHeader(HttpHeaders.ORIGIN);config.addAllowedHeader(HttpHeaders.IF_MATCH);config.addAllowedHeader("x-csrf-token");/g' src/main/java/ca/uhn/fhir/jpa/starter/JpaRestfulServer.java
+echo "Ran sed 1"
 sed -i -e 's/\/fhir\//\/fhir\/R4\//g' src/main/webapp/WEB-INF/web.xml
+echo "Ran sed 2"
 sed -i -e 's/server_address=http:\/\/localhost:8080\/hapi-fhir-jpaserver\/fhir\//server_address=http:\/\/localhost:8080\/fhir\/R4\//g' src/main/resources/hapi.properties
+echo "Ran sed 3"
 sed -i -e 's/<contextPath>\/hapi-fhir-jpaserver<\/contextPath>/<contextPath>\/<\/contextPath>/g' pom.xml
+echo "Ran sed 4"
 sed -i -e 's/\/var\/lib\/jetty\/webapps\/hapi-fhir-jpaserver.war/\/var\/lib\/jetty\/webapps\/root.war/g' Dockerfile
 mvn clean install -DskipTests -q
 docker build -t hapi-fhir-jpaserver .
