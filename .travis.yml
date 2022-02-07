@@ -8,13 +8,13 @@ node_js:
 
 branches:
   only:
-    - master
+    - main
 
 jobs:
   include:
     - stage: "Release"
       name: "Generate a new Release"
-      if: (branch = master) AND (NOT (type = pull_request))
+      if: (branch = main) AND (NOT (type = pull_request))
       script: echo \"Skipping second test execution but keeping NPM hooks alive.\"
       deploy:
          provider: script
